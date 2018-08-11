@@ -5,8 +5,9 @@ $(document).ready(function () {
         var kc = String.fromCharCode(e.keyCode);     
         for(var i = 0; i < soundSet.length; i++){            
             if ( kc == soundSet[i].keyCode) {
-                let audio = new Audio(soundSet[i].uri);
-                audio.play();
+                console.log("HIHI");
+                soundSet[i].audio.play();
+                soundSet[i].audio.currentTime = 0;                
                 // $(`#${soundSet[i].name}`).click();
                 break;
             }
