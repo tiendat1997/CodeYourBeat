@@ -22,6 +22,8 @@ function generateDrumPad(sounds) {
         arr.forEach((sound) => {
             let col = $('<div class="col-md-3"></div>');
             let btn = $(`<button id="${sound.name}">${sound.name} (${sound.keyCode})</button>`);
+            new Audio(sound.uri);
+            
             btn.on('click', function () {
                 var audio = new Audio(sound.uri);
                 audio.play();
