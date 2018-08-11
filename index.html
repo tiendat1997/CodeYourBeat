@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Test Sound</title>
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link rel="stylesheet" href="./css/sound-wave.css">
+</head>
+<style>
+	.title {
+		position: absolute;
+		display: inline-block;
+		top: 20px;
+	}
+</style>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 mx-auto">
+				<img src="./images/logo.jpg" alt="Logo">
+				<div class="title">
+					<h2>CODE</h2>
+					<h2>YOUR</h2>
+					<h2>BEAT</h2>
+					<div class="wave">
+						<span class="wavespan"></span>
+						<span class="wavespan"></span>
+						<span class="wavespan"></span>
+						<span class="wavespan"></span>
+						<span class="wavespan"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">		
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-6" id="drumFrame">
+				<!-- Drum Pad -->
+			</div>
+			<div class="col-md-6">
+				<h2>Press Enter to Play</h2>
+				<hr/>
+				<h2>Press 1 to Toggle Beat 1</h2>
+				<h2>Press 2 to Toggle Beat 2</h2>
+				<h2>Press 3 to Toggle Beat 3</h2>
+				<h2>Press 4 to Toggle Beat 4</h2>
+				<!--
+				<button class="start-beat" data-index="1" data-start='0'>Start</button>
+				<span>Press 1</span>
+				<hr/>
+				<button class="start-beat" data-index="2" data-start='0'>Start</button>
+				<hr/>
+				<button class="start-beat" data-index="3" data-start='0'>Start</button>
+				<hr/>
+				<button class="start-beat" data-index="4" data-start='0'>Start</button> -->
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
+<script src="data.js"></script>
+<script src="drumGenerator.js"></script>
+<script src="yourBeats.js"></script>
+<script type="text/javascript" src="player.js"></script>
+
+</html>
