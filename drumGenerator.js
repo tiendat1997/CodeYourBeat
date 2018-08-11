@@ -5,7 +5,9 @@ $(document).ready(function () {
         var kc = String.fromCharCode(e.keyCode);     
         for(var i = 0; i < soundSet.length; i++){            
             if ( kc == soundSet[i].keyCode) {
-                $(`#${soundSet[i].name}`).click();
+                let audio = new Audio(soundSet[i].uri);
+                audio.play();
+                // $(`#${soundSet[i].name}`).click();
                 break;
             }
         }        
@@ -23,7 +25,7 @@ function generateDrumPad(sounds) {
             let col = $('<div class="col-md-3"></div>');
             let btn = $(`<button id="${sound.name}">${sound.name} (${sound.keyCode})</button>`);
             new Audio(sound.uri);
-            
+
             btn.on('click', function () {
                 var audio = new Audio(sound.uri);
                 audio.play();
