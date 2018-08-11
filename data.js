@@ -11,8 +11,7 @@ var sounds = [
     },   
     {
         name: 'kick-long',
-        uri: 'SoundKit/Kick 3.wav',
-        audio: new Audio('SoundKit/Kick 3.wav'),
+        uri: 'SoundKit/Kick 3.wav',        
         keyCode: ' '        
     },   
     {
@@ -22,7 +21,7 @@ var sounds = [
     },   
     {
         name: 'hey',
-        uri: 'SoundKit/Hey.wav',
+        uri: 'SoundKit/HEY.wav',
         keyCode: ''        
     },   
     {

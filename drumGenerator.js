@@ -4,11 +4,8 @@ $(document).ready(function () {
         var code = e.keyCode;
         var kc = String.fromCharCode(e.keyCode);     
         for(var i = 0; i < soundSet.length; i++){            
-            if ( kc == soundSet[i].keyCode) {
-                console.log("HIHI");
-                soundSet[i].audio.play();
-                soundSet[i].audio.currentTime = 0;                
-                // $(`#${soundSet[i].name}`).click();
+            if ( kc == soundSet[i].keyCode) {                
+                $(`#${soundSet[i].name}`).click();
                 break;
             }
         }        
@@ -25,7 +22,7 @@ function generateDrumPad(sounds) {
         arr.forEach((sound) => {
             let col = $('<div class="col-md-3"></div>');
             let btn = $(`<button id="${sound.name}">${sound.name} (${sound.keyCode})</button>`);
-            new Audio(sound.uri);
+            new Audio(sound.uri).pause();
 
             btn.on('click', function () {
                 var audio = new Audio(sound.uri);
