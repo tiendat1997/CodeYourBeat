@@ -90,9 +90,12 @@ function playMusic(){
 			audio2.duration*1000,
 			audio3.duration*1000
 		]
-		setTimeout(function(){
+		setTimeout(function(){clickBtn('snap')}, 0);
+		setTimeout(function(){clickBtn('snap')}, temp*2);
+		setTimeout(function(){clickBtn('snap')}, temp*4);
+		setTimeout(function(){			
 			loopChain(0, times[0], times);
-		},0);	
+		},temp*6);	
 	}	
 	else {
 		// alert("Running");
