@@ -101,9 +101,9 @@ function playMusic(){
 
 $(document).ready(function () {
 	
-	// Add event keydown for Sounds
+	// Add event keypress for Sounds
 	var soundSet = sounds.map(item => item);    
-    window.addEventListener('keydown', function (e) {	
+    window.addEventListener('keypress', function (e) {	
 
 		if (e.key == "Enter") {
 			playMusic();
