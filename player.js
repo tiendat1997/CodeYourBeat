@@ -33,52 +33,6 @@ function backSound() {
 	setTimeout(function () { clickBtn('background') }, 0);
 }
 
-// PLAY TRIGGER 
-// $('.start-beat').on('click', function () {
-// 	let index = $(this).data('index');
-// 	var startFlag = this.dataset.start;
-// 	// Run Beat with index		
-// 	switch (index) {
-// 		case 1:
-// 			{
-// 				if (startFlag == 0)
-// 					runFirstBeat();
-// 				else
-// 					clearInterval(firstInterval);
-// 				break;
-// 			}
-// 		case 2:
-// 			{
-// 				if (startFlag == 0)
-// 					runSecondBeat();
-// 				else
-// 					clearInterval(secondInterval);
-// 				break;
-// 			}
-// 		case 3:
-// 			{
-// 				if (startFlag == 0)
-// 					runThirdBeat();
-// 				else
-// 					clearInterval(thirdInterval);
-// 				break;
-// 			}
-// 		case 4:
-// 			{
-// 				if (startFlag == 0)
-// 					runFourthBeat();
-// 				else
-// 					clearInterval(fourthInterval);
-// 				break;
-// 			}
-// 		default:
-// 			break;
-// 	}
-// 	this.innerHTML = (startFlag == 0) ? 'Stop' : 'Start';
-// 	this.dataset.start = (startFlag == 0) ? 1 : 0;
-// });
-
-
 // BackTrack Sound countroller 
 var audio = new Audio('Loop/piano-loop-C.wav');
 var audio2 = new Audio('Loop/piano-loop-G.wav');

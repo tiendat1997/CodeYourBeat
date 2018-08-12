@@ -1,10 +1,10 @@
 $(document).ready(function () { 
     var soundSet = sounds.map(item => item);    
     window.addEventListener('keypress', function (e) {
-        var code = e.keyCode;
+        var code = e.charCode;
         var kc = String.fromCharCode(e.keyCode);     
         for(var i = 0; i < soundSet.length; i++){            
-            if ( kc == soundSet[i].keyCode) {                
+            if ( code == soundSet[i].keyCode) {                
                 $(`#${soundSet[i].name}`).click();
                 break;
             }
@@ -21,7 +21,7 @@ function generateDrumPad(sounds) {
         let row = $('<div class="row"></div>');
         arr.forEach((sound) => {
             let col = $('<div class="col-md-3"></div>');
-            let btn = $(`<button id="${sound.name}">${sound.name} (${sound.keyCode})</button>`);
+            let btn = $(`<button id="${sound.name}">${sound.name} (${String.fromCharCode(sound.keyCode)})</button>`);
             new Audio(sound.uri).pause();
 
             btn.on('click', function () {
