@@ -100,24 +100,10 @@ function playMusic(){
 }
 
 $(document).ready(function () {
-	// var backgroundBtn = document.getElementById('background');
-	// backgroundBtn.addEventListener('click', function () {				
-	// 	if (toggles.playBackTrack == false) {			
-	// 		var count = 0;						
-	// 		playMusic();			
-	// 		this.innerHTML = "Stop";
-	// 	} else {
-	// 		clearInterval(backTrackLoop);
-	// 		audio2.pause();
-	// 		audio.currentTime = 0;
-	// 		this.innerHTML = "Start BackTrack";
-	// 	}
-	// 	toggles.playBackTrack = !toggles.playBackTrack;
-	// });
-
-	// Add event keypress for Sounds
+	
+	// Add event keydown for Sounds
 	var soundSet = sounds.map(item => item);    
-    window.addEventListener('keypress', function (e) {	
+    window.addEventListener('keydown', function (e) {	
 
 		if (e.key == "Enter") {
 			playMusic();
