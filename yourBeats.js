@@ -1,7 +1,7 @@
 // First Beat
 function firstBeat() {
 	// Put Your Beat here	
-	setTimeout(function () { clickBtn('kick-long') }, 0);
+	setTimeout(function () { clickBtn('kick-2') }, 0);
 }
 
 function runFirstBeat() {
@@ -14,7 +14,7 @@ function runFirstBeat() {
 // Second Beat
 function secondBeat() {
 	// Write your code here
-	setTimeout(function () { clickBtn('snap') }, temp);
+	setTimeout(function () { clickBtn('clap-2') }, temp);
 }
 
 function runSecondBeat() {
@@ -27,8 +27,8 @@ function runSecondBeat() {
 // Third Beat 
 function thirdBeat() {	
 	// Write your code here
-	setTimeout(function () { clickBtn('snare') }, 0);
-	setTimeout(function () { clickBtn('snare') }, temp*1/2);
+	setTimeout(function () { clickBtn('hat-3') }, 0);
+	setTimeout(function () { clickBtn('hat-4') }, temp*1/2);
 }
 
 function runThirdBeat() {
@@ -41,9 +41,9 @@ function runThirdBeat() {
 
 // Fourth Beat 
 function fourthBeat() {	
-	setTimeout(function() { clickBtn('hey') }, temp);
-	setTimeout(function() { clickBtn('hihat')}, temp + temp*1/2)
-	setTimeout(function() { clickBtn('hihat')}, temp + temp*1/2 + temp*1/2) 
+	setTimeout(function() { clickBtn('kick-4') }, temp);
+	setTimeout(function() { clickBtn('kick-1')}, temp + temp*1/2)
+	setTimeout(function() { clickBtn('kick-2')}, temp + temp*1/2 + temp*1/2) 
 }
 
 function runFourthBeat() {

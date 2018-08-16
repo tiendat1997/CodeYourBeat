@@ -90,9 +90,9 @@ function playMusic(){
 			audio2.duration*1000,
 			audio3.duration*1000
 		]
-		setTimeout(function(){clickBtn('snap')}, 0);
-		setTimeout(function(){clickBtn('snap')}, temp*2);
-		setTimeout(function(){clickBtn('snap')}, temp*4);
+		setTimeout(function(){clickBtn('clap-1')}, 0);
+		setTimeout(function(){clickBtn('clap-1')}, temp*2);
+		setTimeout(function(){clickBtn('clap-1')}, temp*4);
 		setTimeout(function(){			
 			loopChain(0, times[0], times);
 		},temp*6);	
