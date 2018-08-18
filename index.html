@@ -12,10 +12,21 @@
 		display: inline-block;
 		top: 20px;
 	}
+	.music-item {
+		position: relative;
+	}
+	.progress {
+		position: absolute; 
+		top: 0; 
+		left: 0;
+		height: 5px;
+		width:0;
+		background-color: blue;
+	}
 </style>
 
 <body>
-	<div class="container">
+	<div class="container">			
 		<div class="row">
 			<div class="col-md-6 mx-auto">
 				<img src="./images/logo.jpg" alt="Logo">
@@ -31,23 +42,12 @@
 						<span class="wavespan"></span>
 					</div>
 				</div>
-			</div>
+			</div>			
 		</div>
-		<div class="row">		
-		</div>
-		<hr>
-		<div class="row">
-			<div class="col-md-6" id="drumFrame">
-				<!-- Drum Pad -->
-			</div>
-			<div class="col-md-6">
-				<h2>Press Enter to Play</h2>
-				<h3>140bpm</h3>
-				<hr/>
-				<h2>Press 1 to Toggle Beat 1</h2>
-				<h2>Press 2 to Toggle Beat 2</h2>
-				<h2>Press 3 to Toggle Beat 3</h2>
-				<h2>Press 4 to Toggle Beat 4</h2>
+		<div class="row">	
+			<div class="col-md-12">					
+				<input id="input-tempo" type="number" value="0">
+				<button id="submit-tempo">Choose tempo</button>														
 				<!--
 				<button class="start-beat" data-index="1" data-start='0'>Start</button>
 				<span>Press 1</span>
@@ -59,12 +59,24 @@
 				<button class="start-beat" data-index="4" data-start='0'>Start</button> -->
 			</div>
 		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-6" id="drumFrame">
+				<!-- Drum Pad -->
+			</div>
+			<div class="col-md-6" id="musicFrame">						
+				
+				<!-- Music Pad -->
+			</div>
+		</div>
 	</div>
 </body>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
 <script src="data.js"></script>
+<script src="musicData.js"></script>
 <script src="drumGenerator.js"></script>
+<script src="musicGenerator.js"></script>
 <script src="yourBeats.js"></script>
 <script type="text/javascript" src="player.js"></script>
 

@@ -8,7 +8,7 @@
 	};
 })();
 
-var temp = 428.5714285714286; // = (60*1000)/bpm
+var tempo = 428.5714285714286; // = (60*1000)/bpm
 
 var firstInterval = null;
 var secondInterval = null;
@@ -33,96 +33,39 @@ function backSound() {
 	setTimeout(function () { clickBtn('background') }, 0);
 }
 
-// BackTrack Sound countroller 
-var audio = new Audio('Loop/piano-loop-C.wav');
-var audio2 = new Audio('Loop/piano-loop-G.wav');
-var time2 = audio2.duration;
-var audio3 = new Audio('Loop/guitar-acoustic-loop-unknow.wav');
-
-//var audio = new Audio('Loop/looperman-l-2097762-0134258-ugly-love.wav');
-function run(count, time, duration){
-	if (count < 5) {		
-		console.log("INDEX: "  + count);
-		setTimeout(function(){
-			let temp = new Audio('Loop/piano-loop-C.wav');
-			temp.play();			
-		}, time);					
-	}	
-}
-
-// Custom Your BackTrack Music 
-// You can also add as many loops as possible
-function loopChain(count, currTime, times) {		
-	console.log("INDEX: " + count);		
-	console.log("TIME: " + times);		
+function clearAllInterval() {
 	
-	let temp = null;
-	if (count < 2) {	
-		temp = new Audio('Loop/piano-loop-C.wav');						
-		temp.play();			
-		currTime = times[0];
-	}
-	else if (count < 4){
-		temp = new Audio('Loop/piano-loop-G.wav');						
-		temp.play();			
-		currTime = times[1]
-	}
-	else if (count < 6) {
-		temp = new Audio('Loop/guitar-acoustic-loop-unknow.wav');						
-		temp.play();			
-		currTime = times[2]
-	}		
-	if (count < 9) {
-		count++;
-		setTimeout(function(){loopChain(count, currTime, times)}, currTime);
-	}	    
-	else {
-		toggles.playBackTrack = false;
-	}
-}
-
-// Start Your Music
-function playMusic(){	
-	if (toggles.playBackTrack == false)	 {
-		toggles.playBackTrack = true;
-		times = [
-			audio.duration*1000,
-			audio2.duration*1000,
-			audio3.duration*1000
-		]
-		setTimeout(function(){clickBtn('clap-1')}, 0);
-		setTimeout(function(){clickBtn('clap-1')}, temp*2);
-		setTimeout(function(){clickBtn('clap-1')}, temp*4);
-		setTimeout(function(){			
-			loopChain(0, times[0], times);
-		},temp*6);	
-	}	
-	else {
-		// alert("Running");
-	}
 }
 
 $(document).ready(function () {
-	
+	var chooseTempo = document.getElementById('submit-tempo');
+	chooseTempo.addEventListener('click', function(e){
+		let bpm = document.getElementById('input-tempo').value;
+		if (bpm > 10) {
+			tempo = 60000/bpm;		
+			window.alert(tempo);
+			// set event listener
+			window.addEventListener('keypress', function (e) {			
+				if (e.key == 1) {
+					runFirstBeat(); 			
+				}		      
+				else if (e.key == 2) {
+					runSecondBeat();
+				}
+				else if (e.key == 3) {
+					runThirdBeat();
+				}
+				else if (e.key == 4)  {
+					runFourthBeat();
+				}		
+			});			
+		}
+		else {
+			window.alert("Please add number greater than 10");
+			window.removeEventListener('keypress');
+		}				
+	});
+
 	// Add event keypress for Sounds
-	var soundSet = sounds.map(item => item);    
-    window.addEventListener('keypress', function (e) {	
-
-		if (e.key == "Enter") {
-			playMusic();
-		}		
-		else if (e.key == 1) {
-			runFirstBeat(); 			
-		}		      
-		else if (e.key == 2) {
-			runSecondBeat();
-		}
-		else if (e.key == 3) {
-			runThirdBeat();
-		}
-		else if (e.key == 4)  {
-			runFourthBeat();
-		}		
-    });	
-
+	var soundSet = sounds.map(item => item);        
 })

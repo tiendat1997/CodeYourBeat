@@ -2,12 +2,12 @@ var sounds = [
     {
         name: 'clap-1',
         uri: 'SoundKit/biab_electro_clap_1.wav',
-        keyCode: 113       
+        keyCode: 119       
     },   
     {
         name: 'clap-2',
         uri: 'SoundKit/biab_electro_clap_2.wav',
-        keyCode: 119       
+        keyCode: 97       
     },   
     {
         name: 'clap-3',
@@ -22,7 +22,7 @@ var sounds = [
     {
         name: 'kick-1',
         uri: 'SoundKit/biab_electro_kick_1.wav',
-        keyCode: 97        
+        keyCode:  113       
     },   
     {
         name: 'kick-2',
