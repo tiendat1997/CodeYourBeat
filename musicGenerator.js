@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var soundSet = musicKit.map(item => item);
+    var soundSet = musicKit.map(item => item);    
     window.addEventListener('keypress', function (e) {
         var code = e.charCode;
         var kc = String.fromCharCode(e.keyCode);
@@ -9,7 +9,6 @@ $(document).ready(function () {
                 let audio = document.getElementById(`${soundSet[i].name}`);
                 audio.currentTime = 0;
                 audio.play();
-
                 // if (audio.duration > 0 && !audio.paused) {
                 //     audio.pause();
                 //     audio.currentTime = 0;                                        
@@ -24,9 +23,17 @@ $(document).ready(function () {
             }
         }
     });
+    $('#stop-music').on('click', function(){		
+        // Stop All music 
+        soundSet.forEach(function(sound){
+            let audio = document.getElementById(`${sound.name}`);
+            audio.pause();
+            audio.currentTime = 0;
+        });
+	});
+
     generateMusicPad(musicKit);
 });
-
 var musicFrame = $('#musicFrame');
 
 function generateMusicPad(music) {

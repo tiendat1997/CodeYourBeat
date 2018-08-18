@@ -3,7 +3,7 @@
 
 <head>
 	<title>Test Sound</title>
-	<link rel="stylesheet" href="./css/bootstrap.css">	
+	<link rel="stylesheet" href="./css/bootstrap.css">
 	<link rel="stylesheet" href="./css/sound-wave.css">
 </head>
 <style>
@@ -12,21 +12,23 @@
 		display: inline-block;
 		top: 20px;
 	}
+
 	.music-item {
 		position: relative;
 	}
+
 	.progress {
-		position: absolute; 
-		top: 0; 
+		position: absolute;
+		top: 0;
 		left: 0;
 		height: 5px;
-		width:0;
+		width: 0;
 		background-color: blue;
 	}
 </style>
 
 <body>
-	<div class="container">			
+	<div class="container">
 		<div class="row">
 			<div class="col-md-6 mx-auto">
 				<img src="./images/logo.jpg" alt="Logo">
@@ -42,21 +44,27 @@
 						<span class="wavespan"></span>
 					</div>
 				</div>
-			</div>			
+			</div>
 		</div>
-		<div class="row">	
-			<div class="col-md-12">					
+		<div class="row">
+			<div class="col-md-6">
 				<input id="input-tempo" type="number" value="0">
-				<button id="submit-tempo">Choose tempo</button>														
-				<!--
-				<button class="start-beat" data-index="1" data-start='0'>Start</button>
-				<span>Press 1</span>
-				<hr/>
-				<button class="start-beat" data-index="2" data-start='0'>Start</button>
-				<hr/>
-				<button class="start-beat" data-index="3" data-start='0'>Start</button>
-				<hr/>
-				<button class="start-beat" data-index="4" data-start='0'>Start</button> -->
+				<button id="submit-tempo">Choose tempo</button>
+				<span class="badge badge-secondary" id="label-tempo">0 bpm</span>
+			</div>
+			<div class="col-md-6" id="beat-status">									
+					<span data-index="1" class="badge badge-secondary">Beat 1</span>
+					<span data-index="2" class="badge badge-secondary">Beat 2</span>
+					<span data-index="3" class="badge badge-secondary">Beat 3</span>
+					<span data-index="4" class="badge badge-secondary">Beat 4</span>
+					<span data-index="5" class="badge badge-secondary">Beat 5</span>
+					<span data-index="6" class="badge badge-secondary">Beat 6</span>
+					<span data-index="7" class="badge badge-secondary">Beat 7</span>
+					<span data-index="8" class="badge badge-secondary">Beat 8</span>
+					<span data-index="9" class="badge badge-secondary">Beat 9</span>
+					<span data-index="0" class="badge badge-secondary">Base (0)</span>
+					<br>
+					<button id="stop-music">Stop Music</button>				
 			</div>
 		</div>
 		<hr>
@@ -64,8 +72,8 @@
 			<div class="col-md-6" id="drumFrame">
 				<!-- Drum Pad -->
 			</div>
-			<div class="col-md-6" id="musicFrame">						
-				
+			<div class="col-md-6" id="musicFrame">
+
 				<!-- Music Pad -->
 			</div>
 		</div>

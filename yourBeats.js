@@ -4,7 +4,10 @@ function baseBeat(){
 	}, 0);
 }
 function runBaseBeat(){
-
+	if (toggles.playBaseBeat == false)
+		baseInterval = setInterval(baseBeat, tempo, true);
+	else clearInterval(baseInterval);
+	toggles.playBaseBeat = !toggles.playBaseBeat;
 }
 
 // First Beat

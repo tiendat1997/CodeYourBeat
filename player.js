@@ -8,17 +8,20 @@
 	};
 })();
 
-var tempo = 428.5714285714286; // = (60*1000)/bpm
+var tempo = 0; // = (60*1000)/bpm
 
+var baseInterval = null; 
 var firstInterval = null;
 var secondInterval = null;
 var thirdInterval = null;
 var fourthInterval = null;
 var backTrackLoop = null;
 var test = null;
+var isFocusTemp = false;
 // false waiting - true - running
-var toggles = {
+var toggles = {	
 	playBackTrack: false,
+	playBaseBeat: false,
 	playBeat1: false,
 	playBeat2: false,
 	playBeat3: false,
@@ -33,30 +36,52 @@ function backSound() {
 	setTimeout(function () { clickBtn('background') }, 0);
 }
 
-function clearAllInterval() {
-	
+function updateBeatStatus(index, playing){
+	let beatStatus = $('#beat-status').find(`[data-index=${index}]`);
+	let color = playing ? '#dc3545' : '#6c757d';
+	beatStatus.css('background-color', color);
+		
 }
-
-$(document).ready(function () {
-	var chooseTempo = document.getElementById('submit-tempo');
+$(document).ready(function () {			
+	$('#input-tempo').focusin(function(){		
+		isFocusTemp = true;
+	});
+	$('#input-tempo').focusout(function(){		
+		isFocusTemp = false;
+	});
+	
+	var chooseTempo = document.getElementById('submit-tempo');	
 	chooseTempo.addEventListener('click', function(e){
-		let bpm = document.getElementById('input-tempo').value;
+		let bpm = document.getElementById('input-tempo').value;			
+		isFocusTemp = false; 
 		if (bpm > 10) {
 			tempo = 60000/bpm;		
 			window.alert(tempo);
+			$('#label-tempo').text(`${bpm} bpm`);
 			// set event listener
-			window.addEventListener('keypress', function (e) {			
-				if (e.key == 1) {
-					runFirstBeat(); 			
-				}		      
+			window.addEventListener('keypress', function (e) {				
+				if (isFocusTemp == true){					
+					return;
+				}				
+				if (e.key == 0) {					
+					runBaseBeat();	
+					updateBeatStatus(0, toggles.playBaseBeat);					
+				}		     
+				else if (e.key == 1){
+					runFirstBeat();			
+					updateBeatStatus(1, toggles.playBeat1);		
+				} 
 				else if (e.key == 2) {
-					runSecondBeat();
+					runSecondBeat();				
+					updateBeatStatus(2, toggles.playBeat2);
 				}
 				else if (e.key == 3) {
 					runThirdBeat();
+					updateBeatStatus(3, toggles.playBeat3);					
 				}
 				else if (e.key == 4)  {
 					runFourthBeat();
+					updateBeatStatus(4, toggles.playBeat4);					
 				}		
 			});			
 		}
@@ -64,8 +89,5 @@ $(document).ready(function () {
 			window.alert("Please add number greater than 10");
 			window.removeEventListener('keypress');
 		}				
-	});
-
-	// Add event keypress for Sounds
-	var soundSet = sounds.map(item => item);        
+	});		
 })
